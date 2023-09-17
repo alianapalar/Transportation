@@ -1,0 +1,42 @@
+﻿@model List<TeamMember>
+
+{
+    <div class="container-xxl py-5">
+    <div class="container py-5">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="text-secondary text-uppercase">Bizim Takım</h6>
+            <h1 class="mb-5">Takım Uzmanları</h1>
+        </div>
+        <div class="row g-4">
+            @foreach (var item in Model)
+            {
+                
+            
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                
+                    
+                
+                <div class="team-item p-4">
+                    
+                    <div class="overflow-hidden mb-4">
+                        <img class="img-fluid" src="@item.Image" alt="">
+                    </div>
+                    <h5 class="mb-0">@item.Name</h5>
+                    <p>@item.Position</p>
+                    <div class="btn-slide mt-1">
+                        <i class="fa fa-share"></i>
+                        <span>
+                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+           }
+        </div>
+    </div>
+</div>
+
+

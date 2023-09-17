@@ -1,0 +1,28 @@
+﻿@model List<TransportRequest>
+@{
+    ViewData["Title"] = "ApprovedRequest";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>ApprovedRequest</h1>
+
+<table class="table table-striped">
+    <tr>
+        <th>TransportRequestId</th>
+        <th>Taşıma Talep İstek Türü</th>
+        <th>Oluşturulma Tarihi</th>
+        <th>Rezervasyon Oluşturmak İçin Tıklayın</th>
+        <th>Mesaj Gönder</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.TransportRequestId</td>
+            <td>@item.Request.RequestName</td>
+            <td>@item.CreatedAt</td>
+            <td><a href="/Reservation/CreateReservation/?transportRequestId=@item.TransportRequestId" class="btn btn-success">Rezervasyon Oluşturun</a></td>
+            <td><a href="/Message/SendMessage" class="btn btn-info">Taşıma Ekibine Mesaj Gönder</a></td>
+        </tr>
+    }
+    
+</table>

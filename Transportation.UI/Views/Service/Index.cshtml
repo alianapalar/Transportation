@@ -1,0 +1,35 @@
+﻿@model List<RequestType>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+
+<div class="container-xxl py-5">
+    <div class="container py-5">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="text-secondary text-uppercase">Hizmetlerimiz</h6>
+            <h1 class="mb-5">Hizmetlerimizi Keşfedin</h1>
+        </div>
+        <div class="row g-4">
+            @foreach(var service in Model)
+            {
+                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item p-4">
+                    <div class="overflow-hidden mb-4">
+                        <img class="img-fluid" src="@service.Image" alt="">
+                    </div>
+                    <h4 class="mb-3">@service.RequestName</h4>
+                    
+                    <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Daha Fazlası için</span></a>
+                </div>
+            </div>
+            }
+            <a href="/Service/Vehicle" class="btn btn-info"><i class="fa-solid fa-truck-moving"></i><br />Araçlarımızı Keşfedin</a>
+            <a href="/Service/Driver" class="btn btn-warning"><i class="fa-solid fa-id-card"></i><br />Sürücülerimizi Tanıyın</a>
+            <a href="/Service/TransportTeam" class="btn btn-danger"><i class="fa-solid fa-people-group"></i><br />Taşıma Ekibimizle Tanışın</a>
+           
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+﻿@model List<Message>
+@{
+    ViewData["Title"] = "ListSendMessage";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>Gönderdiğim Mesajlar</h1>
+
+
+
+<table class="table table-striped">
+    <tr>
+        <th>Mesaj Id</th>
+        <th>Mesaj içeriği</th>
+        <th>Mesaj Yollanma Tarihi</th>
+        
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MessageId</td>
+            <td>@item.Content</td>
+            <td>@item.SentAt</td>
+            
+           
+        </tr>
+    }
+    
+</table>

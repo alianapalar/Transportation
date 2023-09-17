@@ -1,0 +1,20 @@
+﻿@model Message
+@{
+    ViewData["Title"] = "SendMessage";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1 class="text-center mt-3">Mesaj Yolla</h1>
+
+<form asp-action="SendMessage" method="post">
+    <input type="hidden" asp-for="MessageId" />
+    <input type="hidden" asp-for="SenderUserId" />
+    <div class="form-group mb-3">
+        <label asp-for="Content" class="mb-3">Mesaj içeriğini Giriniz.</label>
+        <textarea asp-for="Content" class="form-control"></textarea>
+    </div>
+    <input type="hidden" asp-for="ReceiverUserId" />
+    <div class="d-flex justify-content-center align-items-center ">
+    <button type="submit" class="btn btn-success mt-4">Mesaj Gönder</button>
+    </div>
+</form>

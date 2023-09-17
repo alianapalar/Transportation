@@ -1,0 +1,33 @@
+﻿@model List<Vehicle>
+@{
+    ViewData["Title"] = "Vehicle";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+
+<div class="container-xxl py-5">
+    <div class="container py-5">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="text-secondary text-uppercase">Araçlarımız</h6>
+            <h1 class="mb-5">Araçlarımızı Keşfedin</h1>
+        </div>
+        <div class="row g-4">
+            @foreach(var vehicle in Model)
+            {
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item p-4">
+                        <div class="overflow-hidden mb-4">
+                            <img class="img-fluid" src="@vehicle.Image" alt="">
+                        </div>
+                        <h4 class="mb-3">@vehicle.VehicleInfo</h4>
+                        <p>Araç Şoförü: @vehicle.Driver.DriverName</p>
+                        <a class="btn-slide mt-2" href=""><i class="fa fa-arrow-right"></i><span>Daha Fazlası</span></a>
+                    </div>
+                </div>
+            }
+            
+            
+        </div>
+    </div>
+</div>

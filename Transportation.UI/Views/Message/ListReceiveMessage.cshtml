@@ -1,0 +1,29 @@
+﻿@model List<Message>
+@{
+    ViewData["Title"] = "ListReceiveMessage";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>Aldığım Mesajlar</h1>
+
+
+
+<table class="table table-striped">
+    <tr>
+        <th>Message Id</th>
+        <th>Mesaj İçeriği</th>
+        <th>Mesaj Yollanma Tarihi</th>
+        <th>Gelen Mesajı Cevaplamak İçin Tıklayın</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MessageId</td>
+            <td>@item.Content</td>
+            <td>@item.SentAt</td>
+            <td><a href="/Message/RepliedMessage/?receiverId=@item.SenderUserId" class="btn btn-danger">Mesajı Cevapla</a></td>
+
+        </tr>
+    }
+
+</table>

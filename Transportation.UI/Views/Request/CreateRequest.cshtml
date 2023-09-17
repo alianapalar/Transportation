@@ -1,0 +1,19 @@
+﻿@model TransportRequest
+@{
+    ViewData["Title"] = "CreateRequest";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1 class="text-center mt-3">CreateRequest</h1>
+
+<form asp-action="CreateRequest" method="post">
+    <input type="hidden" asp-for="UserId" value="@ViewBag.user" />
+    
+    <div class="form-group mb-3">
+        <label asp-for="RequestTypeId">Gönderi Tipini Seçiniz</label>
+        <select class="form-select" asp-items="@ViewBag.requestTypes" asp-for="RequestTypeId"></select>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+   <button type="submit" class="btn btn-success">Talep Oluştur</button>
+    </div>
+</form>
